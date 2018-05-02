@@ -1,0 +1,32 @@
+/**
+ * Created by amit.k.mannur on 3/18/2018.
+ */
+/* Dynamic Programming Java implementation of Coin
+   Change problem */
+import java.util.Arrays;
+
+class CoinChange
+{
+    static long countWays(int S[], int m, int n)
+    {
+        long[] table = new long[n+1];
+
+        Arrays.fill(table, 0);   //O(n)
+
+        table[0] = 1;
+
+        for (int i=0; i<m; i++)
+            for (int j=S[i]; j<=n; j++) {
+                table[j] += table[j - S[i]];
+            }
+        return table[n];
+    }
+
+    public static void main(String args[])
+    {
+        int arr[] = {1, 2, 3};
+        int m = arr.length;
+        int n = 2;
+        System.out.println(countWays(arr, m, n));
+    }
+}
