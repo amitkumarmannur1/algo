@@ -11,7 +11,6 @@ public class Anagram {
     }
 
     private List<List<String>> groupAnagrams(String[] strs) {
-        List<List<String>> result = new ArrayList<>();
         HashMap<String, List<String>> map = new HashMap<>();
 
         for(String str: strs){
@@ -30,7 +29,7 @@ public class Anagram {
                 map.put(ns, al);
             }
         }
-        result.addAll(map.values());
+        List<List<String>> result = new ArrayList<>(map.values());
         return result;
     }
 }

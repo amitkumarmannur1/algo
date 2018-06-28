@@ -4,7 +4,7 @@ import java.util.HashSet;
  * Created by amit.k.mannur on 4/12/2018.
  */
 
-public class RotateString {
+public class RotateStringAndStringPermutation {
 
     static HashSet<String> strings = new HashSet<>();
 
@@ -34,7 +34,7 @@ public class RotateString {
         }
         else{
             for (int i = 0; i < n; i++) {
-                System.out.println(prefix + str.charAt(i) + "   " + str.substring(0, i) + str.substring(i + 1, n));
+               // System.out.println(prefix + str.charAt(i) + "   " + str.substring(0, i) + str.substring(i + 1, n));
                 permutation(prefix + str.charAt(i), str.substring(0, i) + str.substring(i + 1, n));
             }
         }
