@@ -1,6 +1,6 @@
 package btree;
 
-public class BinaryTree
+public class    BinaryTree
 {
     Node root;
 
