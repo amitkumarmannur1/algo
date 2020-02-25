@@ -77,10 +77,10 @@ class MergeSort {
     }
 
     /* A utility function to print array of size n */
-    static void printArray(int arr[]) {
+    static void printArray(int[] arr) {
         int n = arr.length;
-        for (int i = 0; i < n; ++i)
-            System.out.print(arr[i] + " ");
+        for (int value : arr)
+            System.out.print(value + " ");
         System.out.println();
     }
 
