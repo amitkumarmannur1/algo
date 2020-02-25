@@ -1,46 +1,34 @@
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by amit.k.mannur on 4/10/2018.
  */
 
-public class LRUWithLinkedHashMap {
-    int capacity = 3;
-    Map<String, String> map = new LinkedHashMap<>();
+public class LRUWithLinkedHashMap{
 
-    LRUWithLinkedHashMap(Map<String, String> map) {
-        this.map = map;
-    }
+    public static void main(String args[]){
 
-    public static void main(String[] args) {
-        Map<String, String> map = new LinkedHashMap<>(3,0.9f,true);
-        LRUWithLinkedHashMap lruWithLinkedHashMap = new LRUWithLinkedHashMap(map);
-        lruWithLinkedHashMap.put("k1", "v1");
-        lruWithLinkedHashMap.put("k2", "v2");
-        lruWithLinkedHashMap.put("k1", "v3");
+        LinkedHashMap<String,String> lhm = new LinkedHashMap<String,String>(4,0.75f,true) {
 
-        lruWithLinkedHashMap.print();
-
-
-    }
-
-    void put(String k, String v) {
-        if (map.containsKey(k) &&capacity == map.size() ) {
-            map.remove(k);
-        }
-        if (capacity == map.size()) {
-            String remove=null;
-            for (String key : map.keySet()) {
-                remove = key;
-                break;
+            @Override
+            protected boolean removeEldestEntry(Map.Entry<String,String> eldest) {
+                return size() > 4;
             }
-            map.remove(remove);
-        }
-        map.put(k, v);
-    }
+        };
 
-    void print() {
-        System.out.println(map);
+        Map<String,String> stringStringMap=Collections.synchronizedMap(lhm);
+        stringStringMap.put("test", "test");
+        stringStringMap.put("test1", "test1");
+        stringStringMap.put("1", "abc");
+        stringStringMap.put("test2", "test2");
+        stringStringMap.put("1", "abc");
+        stringStringMap.put("test3", "test3");
+        stringStringMap.put("test4", "test4");
+        stringStringMap.put("test3", "test3");
+        stringStringMap.put("1", "abc");
+        stringStringMap.put("test1", "test1");
+
+
+        System.out.println(lhm);
     }
 }

@@ -1,3 +1,5 @@
+import org.springframework.util.StringUtils;
+
 public class AddBinary {
     static String addBinary(String a, String b) {
 
@@ -33,7 +35,7 @@ public class AddBinary {
     }
 
     //Drive code
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         /*int a = 100, b = 100;
         int i = 8;
         StringBuilder x = intToBinary(i);
@@ -51,27 +53,41 @@ public class AddBinary {
         System.out.println(addBinary(a1,b1));
         System.out.println(decimal);
 */
+        System.out.println(args[1] + "--"+args[3]+"--"+args[0]);
 
-        intToBinary(10);
+        System.out.println(intToBinary(5461));
+        System.out.println(BinaryToIntTest("1010101010101"));
 
-
-
-
-
-
-
-
+        main1(new String[]{"My","Car","is","Red"});
 
     }
 
     private static int BinaryToInt(int a, int decimal, int p) {
-        while(a!=0)
-        {
-            decimal+=((a%10)*Math.pow(2,p));
-            a=a/10;
+        while (a != 0) {
+            decimal += ((a % 10) * Math.pow(2, p));
+            a = a / 10;
             p++;
         }
         return decimal;
+    }
+
+    private static void main1(String[] a){
+        System.out.println(a[1] + "--"+a[3]+"--"+a[0]);
+
+    }
+
+    private static int BinaryToIntTest(String a) {
+        int integer = 0;
+        for (int i = 0; i < a.length()-1; i++) {
+            if (Integer.parseInt(Character.toString(a.charAt(i) ))== 1)
+                integer +=   1 << a.length()-i-1;
+        }
+        if(Integer.parseInt(Character.toString(a.charAt(a.length()-1))) ==1){
+            integer += 1;
+        }
+        System.out.println(integer);
+
+        return integer;
     }
 
     private static String intToBinary(int input) {

@@ -13,14 +13,15 @@ public class AllPalindromes {
     }
 
     private static void printAllPalindrome(String str) {
-        int longestlength=0;
-        String longestString=null;
-        for(int i=0;i<=str.length();i++)
-            for(int j=i;j<str.length();j++)
-                if(checkPalindrome(str.substring(i,j+1))) {
-                    if(str.substring(i, j + 1).length()>longestlength){
-                        longestlength=str.substring(i, j + 1).length();
-                        longestString=str.substring(i, j + 1);
+        int longestlength = 0;
+        String longestString = null;
+        for (int i = 0; i <= str.length(); i++)
+            for (int j = i; j < str.length(); j++)
+               if (str.substring(i, j + 1).length() > longestlength) {
+                    System.out.println(str.substring(i, j + 1));
+                    if (checkPalindrome(str.substring(i, j+ 1))) {
+                        longestlength = str.substring(i, j + 1).length();
+                        longestString = str.substring(i, j + 1);
                     }
                 }
 
@@ -38,7 +39,7 @@ public class AllPalindromes {
     }
 
     public static void main(String[] args) {
-        printAllPalindrome("aabbaaaaa");
+        printAllPalindrome("cc");
         //   System.out.println(checkPalindrome("aabae"));
     }
 }

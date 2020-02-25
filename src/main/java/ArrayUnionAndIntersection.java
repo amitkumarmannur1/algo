@@ -6,7 +6,7 @@ public class ArrayUnionAndIntersection {
 
     public static void main(String[] args) {
         String s = "amii";
-        String s1 = "zyamt";
+        String s1 = "zyamti";
 
         unionOfStrings(s, s1);
         intersectionOfStrings(s, s1);
@@ -18,7 +18,7 @@ public class ArrayUnionAndIntersection {
         char[] chars2 = new char['z' + 1];
         char[] intersection = new char['z' + 1];
         for (char c : chars) {
-            chars2[c]++;
+            chars2[c]=1;
         }
         for (char c : chars1) {
             if (chars2[c] > 0) {
@@ -27,6 +27,10 @@ public class ArrayUnionAndIntersection {
         }
         System.out.print("intersection: ");
         System.out.println(intersection);
+
+
+
+
     }
 
     private static void unionOfStrings(String s, String s1) {
@@ -45,7 +49,8 @@ public class ArrayUnionAndIntersection {
                 union[i] = (char)i;
         }
         System.out.print("union :");
-        System.out.println(union);
+        System.out.println(union );
+        System.out.print(":::::::");
     }
 }
 
