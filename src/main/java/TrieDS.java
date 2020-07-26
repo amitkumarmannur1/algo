@@ -98,15 +98,15 @@ public class TrieDS {
         else
             System.out.println("the --- " + output[0]);
 
-        if(search("these") == true)
+        if(search("these"))
             System.out.println("these --- " + output[1]);
         else System.out.println("these --- " + output[0]);
 
-        if(search("their") == true)
+        if(search("their"))
             System.out.println("their --- " + output[1]);
         else System.out.println("their --- " + output[0]);
 
-        if(search("ans") == true)
+        if(search("ans"))
             System.out.println("ans --- " + output[1]);
         else System.out.println("ans --- " + output[0]);
 
