@@ -6,7 +6,7 @@ public class BinarySearch {
     public static void main(String p[]){
 
         int[] a={1,2,3,4,5,6,7,8,19,20};
-        System.out.println( binnarySearch(a,0,a.length-1,111));
+        System.out.println( binnarySearch(a,0,a.length-1,2));
     }
 
     static int binnarySearch(int[] a,int low,int high,int key){

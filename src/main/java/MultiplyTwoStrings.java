@@ -5,7 +5,7 @@
 public class MultiplyTwoStrings {
 
     public static void main(String[] args) {
-        System.out.println(multiply("78","2"));
+        System.out.println(multiply("7800","2"));
     }
     private static String multiply(String num1, String num2) {
         String n1 = new StringBuilder(num1).reverse().toString();

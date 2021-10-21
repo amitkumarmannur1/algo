@@ -2,31 +2,56 @@ public class AddBinary {
     static String addBinary(String a, String b) {
 
         // Initialize result
+        int sum = 0;
+
+        int i = a.length() - 1;
+        int j = b.length() - 1;
+
         String result = "";
+        while (i >= 0 || j >= 0 || sum == 1) {
 
-        // Initialize digit sum
-        int s = 0;
+            if (i >= 0)
+                sum += a.charAt(i) - '0';
+            if (j >= 0)
+                sum += b.charAt(j) - '0';
 
-        // Travers both strings starting
-        // from last characters
-        int i = a.length() - 1, j = b.length() - 1;
-        while (i >= 0 || j >= 0 || s == 1) {
+            result = (char) sum % 2 + result;
 
-            // Comput sum of last
-            // digits and carry
-            s += ((i >= 0) ? a.charAt(i) - '0' : 0);
-            s += ((j >= 0) ? b.charAt(j) - '0' : 0);
+            sum = sum / 2;
 
-            // If current digit sum is
-            // 1 or 3, add 1 to result
-            result = (char) (s % 2 + '0') + result;
-
-            // Compute carry
-            s /= 2;
-
-            // Move to next digits
             i--;
             j--;
+
+        }
+
+        return result;
+
+    }
+
+
+    public static String addIntegers(String a, String b) {
+
+        String result = "";
+
+        int i = a.length() - 1;
+        int j = b.length() - 1;
+
+        int sum = 0;
+
+        while (i >= 0 || j >= 0 || sum ==1) {
+
+            if (i >= 0)
+                sum += a.charAt(i) - '0';
+            if (j >= 0)
+                sum += b.charAt(j) - '0';
+
+            result = (char) sum % 10 + result;
+
+            sum = sum / 10;
+
+            i--;
+            j--;
+
         }
 
         return result;
@@ -55,20 +80,16 @@ public class AddBinary {
         intToBinary(10);
 
 
-
-
-
-
-
+        System.out.println(addBinary("1010", "1011"));
+        System.out.println(addIntegers("22", "29"));
 
 
     }
 
     private static int BinaryToInt(int a, int decimal, int p) {
-        while(a!=0)
-        {
-            decimal+=((a%10)*Math.pow(2,p));
-            a=a/10;
+        while (a != 0) {
+            decimal += ((a % 10) * Math.pow(2, p));
+            a = a / 10;
             p++;
         }
         return decimal;

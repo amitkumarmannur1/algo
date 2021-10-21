@@ -54,7 +54,7 @@ public class UnixCommandStack {
             if (ss.equals("")) continue;
             if (ss.equals("..") && !q.isEmpty()) {
                 q.pop();
-            } else if (ss.equals("..") && q.isEmpty()) {
+            } else if (ss.equals("..")) {
                 continue;
             } else if (ss.equals(".")) continue;
             else {

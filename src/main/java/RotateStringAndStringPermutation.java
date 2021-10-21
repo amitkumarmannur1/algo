@@ -10,7 +10,7 @@ public class RotateStringAndStringPermutation {
 
     public static void main(String[] args) {
         //rotateString("abcd");
-        permutation("", "abc");
+        permutation("", "abce");
         System.out.println(strings);
         System.out.println(strings.size());
     }

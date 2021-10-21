@@ -1,8 +1,6 @@
 public class Merge2Array {
 
-    long l= 10000000000L;
-    Integer sum= Math.toIntExact(l % 10);
-    int i=(int)l%10;
+
 
     public static void main(String[] ad){
         int a[]={1,3,6,0,0,0};

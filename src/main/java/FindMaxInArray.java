@@ -1,3 +1,6 @@
+import java.util.Collections;
+import java.util.TreeMap;
+
 public class FindMaxInArray {
 
     static int findMax(int[] arr) {
@@ -16,6 +19,24 @@ public class FindMaxInArray {
         return max;
     }
 
+    static int findKthMax(int[] arr,int k) {
+        int max = arr[0];
+        int second = 0;
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < max) {
+                second = arr[i];
+            } else {
+                if( k == 0)
+                second = max;
+
+                k--;
+            }
+            max = Math.max(arr[i], max);
+        }
+        System.out.println(second);
+        System.out.println("The Maximum value is : " + max);
+        return second;
+    }
 
     public static int maximumProduct(int[] nums) {
         int min1 = Integer.MAX_VALUE, min2 = Integer.MAX_VALUE;
@@ -44,6 +65,7 @@ public class FindMaxInArray {
         int arr[] = {6, 3, 7, 2, 9, 9, 2, 12};
         System.out.println(findMax(arr));
 
+        System.out.println("kth max "+findKthMax(arr,1));
         int nums[]={1,1,2,4,1,3,1,1,9};
         System.out.println(maximumProduct(nums));
         System.out.println(maximumProduct2(nums));
