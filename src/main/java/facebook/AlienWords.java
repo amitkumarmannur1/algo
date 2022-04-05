@@ -4,7 +4,7 @@ public class AlienWords {
     public static void main(String[] asd){
 
         AlienWords alienWords = new AlienWords();
-        String[] words = {"app","apple"};
+        String[] words = {"app","apple","bzzzzzzzsuik","zzzz"};
         System.out.println(alienWords.isAlienSorted(words,"abcdefghijklmnopqrstuvwxyz"));
 
     }

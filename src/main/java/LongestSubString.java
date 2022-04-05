@@ -70,8 +70,8 @@ public class LongestSubString {
 
     public static void main(String as[]) {
         //System.out.println(longestSubString.lengthOfLongestSubstring("akomitaseada"));
-        longestSubstring("akomitaaseada");
-        System.out.println(LongestSubString.lengthOfLongestSubstringKDistinct("abcadcacacaca", 3));
+        longestSubstring("pwwkew");
+        System.out.println(LongestSubString.lengthOfLongestSubstringKDistinct("abcadcacacaca", 2));
 
     }
 }
