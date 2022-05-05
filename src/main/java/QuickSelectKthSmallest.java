@@ -8,10 +8,10 @@ class Main
     // high value to the right and also changes
     // the pivot position to its respective position
     // in the final array.
-    public static int partition(int[] arr, int low,
-                                int high)
+    public static int partition(int[] arr, int low, int high)
     {
-        int pivot = arr[high], pivotloc = low;
+        int pivot = arr[high];
+        int pivotloc = low;
         for (int i = low; i <= high; i++) {
             // inserting elements of less value
             // to the left of the pivot location

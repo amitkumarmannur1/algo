@@ -5,7 +5,19 @@ import java.util.stream.Collectors;
  * Created by amit.k.mannur on 11/7/2017.
  */
 public class LongestSubString {
+    public boolean isRectangleOverlap(int[] rec1, int[] rec2) {
+        // check if either rectangle is actually a line
+        if (rec1[0] == rec1[2] || rec1[1] == rec1[3] ||
+                rec2[0] == rec2[2] || rec2[1] == rec2[3]) {
+            // the line cannot have positive overlap
+            return false;
+        }
 
+        return rec1[2] > rec2[0] &&   // left
+                rec2[1] < rec1[3] &&   // bottom
+                rec1[0] < rec2[2] &&   // right
+                rec1[1] < rec2[3];    // top
+    }
     public static int lengthOfLongestSubstringKDistinct(String s, int k) {
         if (k == 0 || s == null || s.length() == 0)
             return 0;
@@ -46,7 +58,6 @@ public class LongestSubString {
         int longestString = 0;
         Set as;
         Map<Character, Integer> characterMap = new LinkedHashMap<>();
-        characterMap.clear();
         String as1 = "";
         for (int i = 0; i < str.length() - 1; i++) {
             if (characterMap.containsKey(str.charAt(i))) {
@@ -71,7 +82,7 @@ public class LongestSubString {
     public static void main(String as[]) {
         //System.out.println(longestSubString.lengthOfLongestSubstring("akomitaseada"));
         longestSubstring("pwwkew");
-        System.out.println(LongestSubString.lengthOfLongestSubstringKDistinct("abcadcacacaca", 2));
+        System.out.println(LongestSubString.lengthOfLongestSubstringKDistinct("asdfg", 3));
 
     }
 }

@@ -1,6 +1,7 @@
 package facebook;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 class TreeNodeMerge {
@@ -23,7 +24,7 @@ class TreeNodeMerge {
         if (root.data[1] >= data[0]) {
             root.data[1]  = Math.max(root.data[1],data[1]);
             if(root.data[0] > data[0]){
-                root.data[0] = Math.min(root.data[0],data[0]);
+                root.data[0] = data[0];
             }
 
         }
@@ -50,13 +51,12 @@ class TreeNodeMerge {
 public class MergeIntervalWithTrees {
 
     public static void main(String[] args) {
-        MergeIntervalWithTrees mergeIntervalWithTrees = new MergeIntervalWithTrees();
         TreeNodeMerge treeNodeMerge = new TreeNodeMerge(new int[]{1,4});
-        treeNodeMerge.insert(treeNodeMerge,new int[]{0,0});
-        treeNodeMerge.insert(treeNodeMerge,new int[]{8,10});
+        treeNodeMerge.insert(treeNodeMerge,new int[]{2,4});
+        treeNodeMerge.insert(treeNodeMerge,new int[]{1,10});
         treeNodeMerge.insert(treeNodeMerge,new int[]{15,18});
         treeNodeMerge.inorderRec(treeNodeMerge);
-        System.out.println(treeNodeMerge.ints);
+        System.out.println(Arrays.deepToString(treeNodeMerge.ints.toArray()));
         //{1,5},{2,7},{9,12},{11,11}
 
     }

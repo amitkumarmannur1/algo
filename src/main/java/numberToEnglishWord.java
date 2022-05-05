@@ -124,6 +124,6 @@ public class numberToEnglishWord {
 
     public static void main(String[] sd){
         numberToEnglishWord numberToEnglishWord= new numberToEnglishWord();
-        System.out.println(numberToEnglishWord.numberToWords(1234567890));
+        System.out.println(numberToEnglishWord.numberToWords(12345));
     }
 }
